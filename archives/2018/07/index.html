@@ -1,50 +1,251 @@
-{% extends "_layout.njk" %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block css %}
-<link rel="stylesheet" type="text/css" href="{{ url_for("css/page.css") }}">
-<link rel="stylesheet" type="text/css" href="{{ url_for("css/archive.css") }}">
-{% endblock %}
+<!-- Head tag -->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-{% block title %}{{ __("archive") }} | {{ config.title }}{% if config.subtitle %} - {{ config.subtitle }}{% endif %}{% endblock %}
+  <!--Description-->
+  
 
-{% block content %}
-<div id="archive" class="archive">
-  <h1 class="archive-counter">
-    {% if site.posts.length > 1 %}
-    {{ _p("postcount.more", site.posts.length) }}
-    {% elif site.posts.length === 1 %}
-    {{ _p("postcount.one", site.posts.length) }}
-    {% else %}
-    {{ __("postcount.none") }}
-    {% endif %}
-  </h1>
-  {% set year = "1970" %}
-  {% for post in page.posts.toArray() %}
-  {% if date(post.date, "YYYY") !== year %}
-  {% set year = date(post.date, "YYYY") %}
-  <h1 class="archive-title">{{ year }}</h1>
-  {% endif %}
-  <article class="archive-article card{% if theme.animate %} animate{% endif %}" itemscope itemtype="http://schema.org/Article">
-    <h1 class="post-title" itemprop="name headline">
-      <a class="post-title-link post-title-link-external" href="{{ url_for(post.path) }}" itemprop="url">{{ post.title }}</a>
-    </h1>
-    {% if post.date %}
-    <span class="post-date">
-      <time title="post-date" itemprop="dateCreated datePublished" datetime="{{ moment(post.date).format() }}">{{ date(post.date, "MM-DD") }}</time>
+  <!--Author-->
+  
+  <meta name="author" content="BOOK BASE">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="Darkmoon Base"/>
+  
+  <!--Open Graph Description-->
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="Darkmoon Base"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="website" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Title -->
+  
+  <title>Archives: 2018/7 - Darkmoon Base</title>
+
+
+  <link rel="shortcut icon" href="https://hexo.io/icon/favicon-96x96.png">
+
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+
+  <!----------------------------
+  https://github.com/GallenHu/hexo-theme-Daily
+
+ _____            _   _
+|  __ \          (_) | |
+| |  | |   __ _   _  | |  _   _
+| |  | |  / _` | | | | | | | | |
+| |__| | | (_| | | | | | | |_| |
+|_____/   \__,_| |_| |_|  \__, |
+                          __/ |
+                         |___/
+
+    --------------------------->
+
+</head>
+
+
+<body>
+
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="https://hexo.io/logo.svg" alt="Darkmoon Base" height="60">
+        
+      </a>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  home
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  archive
+                
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Main Content -->
+  
+
+<!-- Main Content -->
+<div class="archive content-area">
+  <div class="container">
+    <h1 class="entry-title">2018/7</h1>
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <!-- Use lodash to classify posts. See https://lodash.com/docs#groupBy
+          1. group site.posts by year
+          2. sort posts-in-one-year by Month and Day
+        -->
+        
+
+        
+          <h2 class="year">2018</h2>
+          <ul class="list">
+            
+  <li>
+    <span class="date">
+      2018-07-11
     </span>
-    {% endif %}
-  </article>
-  {% endfor %}
-  {% if page.prev or page.next %}
-  <nav class="pagination">
-    {{
-      paginator({
-        prev_text: "<i class=\"fas fa-angle-left\"></i>",
-        next_text: "<i class=\"fas fa-angle-right\"></i>",
-        mid_size: 1
-      })
-    }}
-  </nav>
-  {% endif %}
+    <a href="/2018/07/11/1111/" class="title">
+      1111
+    </a>
+  </li>
+
+  <li>
+    <span class="date">
+      2018-07-11
+    </span>
+    <a href="/2018/07/11/测测测/" class="title">
+      Untitled
+    </a>
+  </li>
+
+  <li>
+    <span class="date">
+      2018-07-10
+    </span>
+    <a href="/2018/07/10/測試/" class="title">
+      Untitled
+    </a>
+  </li>
+
+  <li>
+    <span class="date">
+      2018-07-10
+    </span>
+    <a href="/2018/07/10/hello-world/" class="title">
+      Hello World
+    </a>
+  </li>
+
+  <li>
+    <span class="date">
+      2018-07-10
+    </span>
+    <a href="/2018/07/10/testtt/" class="title">
+      testtt
+    </a>
+  </li>
+
+  <li>
+    <span class="date">
+      2018-07-10
+    </span>
+    <a href="/2018/07/10/hahahaha/" class="title">
+      hahahaha
+    </a>
+  </li>
+
+
+          </ul>
+        
+      </div>
+    </div>
+  </div>
 </div>
-{% endblock %}
+
+
+  <!-- Footer -->
+  <!-- Footer-widgets -->
+<div class="footer-widgets">
+  <div class="row inside-wrapper">
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">关于本站</h1>
+        <div class="custom-widget-content">
+          
+          <ul><li><a href="https://github.com/GallenHu/hexo-theme-Daily">如何自定义这里的内容(配置教程)?</a></li></ul>
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Contact</h1>
+        <div class="widget-text">
+          
+            
+              <a href="https://github.com/GallenHu" class="icon icon-github" target="_blank">github</a>
+            
+          
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">Search</h1>
+        <div class="widget-text">
+          <form onSubmit="return appDaily.submitSearch('')">
+            <p>
+              <input type="text" placeholder="search..." id="homeSearchInput">
+            </p>
+            <!-- <input type="submit" value="GO"> -->
+          </form>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>Darkmoon Base &copy; 2018</span>
+    
+      <span class="split">|</span>
+      <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> with Theme <a href="https://github.com/GallenHu/hexo-theme-Daily" target="_blank">Daily</a></span>
+    
+  </p>
+</footer>
+
+
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script>
+
+
+
+
+
+</body>
+
+</html>
