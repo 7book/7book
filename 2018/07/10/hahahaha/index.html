@@ -1,42 +1,82 @@
-extends ../_partial/layout
+<!DOCTYPE html>
+<html lang="en">
+  <!-- Head tag -->
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-block content
-  .container.post
-    section.article
-      .title= page.title
-      .date 写于#{moment(page.date).format(theme.date_format)}
-      .content!= page.content
-      if page.tags
-        .tags!= list_tags(page.tags, { show_count: false, class: 'tag', style: false, separator: '' })
+  <!-- Title -->
+  
+  <title>hahahaha - Darkmoon Base</title>
 
-  .container
-    ul.nav
-      if page.prev
-        li 上一篇：
-          a(href=url_for(page.prev.path))= page.prev.title || '未命名'
-      if page.next
-        li 下一篇：
-          a(href=url_for(page.next.path))= page.next.title || '未命名'
+  <!--Favicon-->
+  <link rel="icon" href="favicon/favicon.ico">
 
-    if !index && config.disqus_shortname
-      .comments
-        #disqus_thread
-          noscript Please enable JavaScript to view the 
-            a(href="http://disqus.com/?ref_noscript") comments powered by Disqus
+  <!--Description-->
+  
 
-block js
-  include ../_partial/post_footer.pug
-  != js('script/post')
-  if config.disqus_shortname
-    script
-      | var disqus_shortname = '!{config.disqus_shortname}';
-      if page.permalink
-        | var disqus_url = '!{page.permalink}';
-        | (function(){
-        |  var dsq = document.createElement('script');
-        |  dsq.type = 'text/javascript';
-        |  dsq.async = true;
-        |  dsq.src = '//' + disqus_shortname + '.disqus.com/!{page.comments ? 'embed.js' : 'count.hs'}';
-        |  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        | })();
-        
+  <!--Author-->
+  
+      <meta name="author" content="BOOK BASE">
+  
+
+  <!-- Pure CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Crimson+Text|Open+Sans:300,800" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+
+  <!-- Google Analytics -->
+  
+
+</head>
+
+
+  <body>
+  	<div class="container-fluid navbar-container m-sm-5">
+      <!-- Header -->
+      <nav class="navbar navbar-toggleable-sm navbar-light px-1 py-3 my-3 mb-sm-5">
+  <a class="navbar-brand ml-2" href="/">Darkmoon Base</a>
+  <button class="navbar-toggler navbar-toggler-right py-2" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse text-center" id="navbarCollapse">
+    <ul class="navbar-nav ml-auto my-auto">
+      
+    </ul>
+    <hr class="hidden-md-up" />
+  </div>
+</nav>
+
+
+  		<div class="row">
+  			<div class="col-12 mb-4">
+  <img class="img-fluid project-img" src="/images/unsplash.jpg" alt="hahahaha">
+</div>
+<div class="col-lg-4 col-12 pt-3 px-4 pr-lg-5">
+  <h1>hahahaha</h1>
+</div>
+<div class="col-lg-8 col-12 pt-lg-3 mb-4 pl-lg-5 px-lg-0 px-4 portfolio-content">
+  
+</div>
+
+
+      </div>
+      
+  	</div>
+
+    <!-- After footer scripts -->
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+  </body>
+</html>
